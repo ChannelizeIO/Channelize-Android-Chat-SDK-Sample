@@ -1,0 +1,40 @@
+<!--
+  ~   Copyright (c) 2016 BigStep Technologies Private Limited.
+  ~
+  ~   You may not use this file except in compliance with the
+  ~   SocialEngineAddOns License Agreement.
+  ~   You may obtain a copy of the License at:
+  ~   https://www.socialengineaddons.com/android-app-license
+  ~   The full copyright and license information is also mentioned
+  ~   in the LICENSE file that was distributed with this
+  ~   source code.
+  -->
+
+<resources>
+
+    <!-- CircularImageView Custom Styling -->
+    <declare-styleable name="CircularImageView">
+        <attr name="civ_border" format="boolean"/>
+        <attr name="civ_borderColor" format="color"/>
+        <attr name="civ_borderWidth" format="dimension"/>
+        <attr name="civ_selector" format="boolean"/>
+        <attr name="civ_selectorColor" format="color"/>
+        <attr name="civ_selectorStrokeColor" format="color"/>
+        <attr name="civ_selectorStrokeWidth" format="dimension"/>
+        <attr name="civ_shadow" format="boolean"/>
+        <attr name="civ_shadowRadius" format="float"/>
+        <attr name="civ_shadowDx" format="float"/>
+        <attr name="civ_shadowDy" format="float"/>
+        <attr name="civ_shadowColor" format="color"/>
+        <attr name="civ_border_width" format="dimension"/>
+        <attr name="civ_border_color" format="color"/>
+        <attr name="civ_shadow_color" format="color"/>
+        <attr name="civ_shadow_radius" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircularImageViewStyle">
+        <attr name="circularImageViewDefault" format="reference"/>
+    </declare-styleable>
+
+
+</resources>

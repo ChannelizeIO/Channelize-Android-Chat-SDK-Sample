@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView"
+    android:background="@color/pm_white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_20dp"
+        android:paddingStart="@dimen/dimen_20dp"
+        android:paddingEnd="@dimen/dimen_20dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:id="@+id/main_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/logged_in_view"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/title"
+                android:layout_marginTop="@dimen/dimen_100dp"
+                android:layout_centerHorizontal="true"
+                android:text="Welcome!"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:textColor="@color/pm_black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/logout_button"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:gravity="center_horizontal"
+                android:text="Logout"
+                android:textStyle="bold"
+                android:layout_below="@+id/title"/>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

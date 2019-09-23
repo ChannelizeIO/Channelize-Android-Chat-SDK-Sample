@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ChannelizeSampleApp</string>
+    <string name="places_api_key">replace with you google places api key</string>
+    <string name="giphy_api_key">replace with your giphy key</string>
+</resources>

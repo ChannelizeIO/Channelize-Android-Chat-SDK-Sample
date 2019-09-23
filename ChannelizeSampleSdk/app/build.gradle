@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+
+project.ext {
+    appVersionCode = 1
+    appVersionName = '1.0'
+    storeFile = 'release'
+    storePassword = 'release'
+    keyAlias = 'release'
+    keyPassword = 'release'
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.channelize.sample"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode project.ext.appVersionCode.toInteger()
+        versionName project.ext.appVersionName
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(project.storeFile)
+            storePassword project.storePassword
+            keyAlias project.keyAlias
+            keyPassword project.keyPassword
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g" //specify the heap size for the dex process
+        preDexLibraries = false //delete the already predexed libraries
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+ext{
+    channelizeSDKVersion = '4.0.10'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:support-v13:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation ('com.android.support:recyclerview-v7:27.1.1') {
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    implementation ('com.google.android.gms:play-services-location:15.0.1') {
+        exclude group: 'com.android.support'
+    }
+    implementation ('com.google.android.gms:play-services-maps:15.0.1') {
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+    implementation ('com.google.firebase:firebase-messaging:17.1.0') {
+        exclude group: 'com.google.android'
+    }
+    implementation ('com.google.firebase:firebase-core:16.0.1') {
+        exclude group: 'com.google.android'
+    }
+
+    // Channelize Dependency.
+    implementation "com.github.ChannelizeIO.Channelize-Android-SDK:channelizeapi:$channelizeSDKVersion"
+    implementation "com.github.ChannelizeIO.Channelize-Android-SDK:channelizeui:$channelizeSDKVersion"
+    implementation "com.github.ChannelizeIO.Channelize-Android-SDK:channelizecall:$channelizeSDKVersion"
+}
+apply plugin: 'com.google.gms.google-services'
