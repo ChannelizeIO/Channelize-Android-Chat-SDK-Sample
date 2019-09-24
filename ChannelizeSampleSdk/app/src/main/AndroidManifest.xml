@@ -50,7 +50,7 @@
              otherwise put the value "@string/pm_push_notification_open_activity_name".
              This will simply launch the channelize activity-->
         <meta-data android:name="com.channelize.messenger.activity.open.notification"
-            android:value="com.channelize.messenger.LoginActivity" />
+            android:value="com.channelize.sample.MainActivity" />
 
         <activity android:name="com.channelize.sample.MainActivity">
             <intent-filter>
