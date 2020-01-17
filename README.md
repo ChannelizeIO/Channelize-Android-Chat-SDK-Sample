@@ -1,2 +1,1 @@
-# Channelize-Android-SampleSdk
-Sample Android app with Channelize sdk integration
+This sample app demonstrates how to build a real-time messaging Android App using [Channelize.io](https://channelize.io/) Android SDKs. Refer our [Android Developer Documentation](https://docs.channelize.io/android-api-sdk-introduction-overview/) to know steps to install, configure and use it.
