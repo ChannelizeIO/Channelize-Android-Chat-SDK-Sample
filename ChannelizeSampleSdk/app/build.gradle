@@ -64,7 +64,9 @@ android {
 }
 
 ext{
-    channelizeSDKVersion = '4.0.10'
+    supportLibraryVersion = '28.0.0'
+    agoraSDKVersion = '2.3.0'
+    channelizeSDKVersion = '4.1.7'
 }
 
 dependencies {
@@ -96,6 +98,13 @@ dependencies {
     implementation ('com.google.firebase:firebase-core:16.0.1') {
         exclude group: 'com.google.android'
     }
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation("com.squareup.okhttp3:logging-interceptor:4.2.1")
+
+    implementation "io.agora.rtc:full-sdk:$agoraSDKVersion"
 
     // Channelize Dependency.
     implementation "com.github.ChannelizeIO.Channelize-Android-SDK:channelizeapi:$channelizeSDKVersion"

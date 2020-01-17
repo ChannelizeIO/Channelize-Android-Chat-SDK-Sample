@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~   Copyright (c) 2018 BigStep Technologies Private Limited.
+  ~
+  ~   The distribution of this source code is prohibited.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            android:padding="@dimen/dimen_20dp"
+            android:paddingStart="@dimen/dimen_20dp"
+            android:paddingEnd="@dimen/dimen_20dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:id="@+id/main_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/title"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:textSize="@dimen/title_medium_font_size"
+                android:textColor="@color/title_color"
+                android:text="Welcome to Channelize"/>
+
+            <ImageView
+                android:layout_width="@dimen/dimen_70dp"
+                android:layout_height="@dimen/dimen_70dp"
+                android:id="@+id/app_icon"
+                android:layout_below="@+id/title"
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/login_icon"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_25dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="image" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/error_view"
+                android:visibility="gone"
+                android:layout_below="@+id/app_icon"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/body_medium_font_size"
+                android:textColor="@color/red"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:textColorHint="@color/grey"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_below="@+id/error_view">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/error_view"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/email_address"
+                    android:backgroundTint="@color/grey_light"
+                    android:focusableInTouchMode="true"
+                    android:textSize="@dimen/title_medium_font_size"
+                    android:textColor="@color/black"
+                    tools:ignore="UnusedAttribute" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                app:passwordToggleEnabled="true"
+                android:textColorHint="@color/grey"
+                android:layout_below="@+id/emailWrapper">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:textSize="@dimen/title_medium_font_size"
+                    android:inputType="textPassword"
+                    android:hint="@string/password"
+                    android:backgroundTint="@color/grey_light"
+                    android:focusableInTouchMode="true"
+                    android:textColor="@color/black"
+                    tools:ignore="UnusedAttribute"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/login_button_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:layout_marginBottom="@dimen/dimen_30dp"
+                android:layout_below="@+id/passwordWrapper">
+
+                <Button
+                    android:id="@+id/login_button"
+                    android:background="@drawable/pm_bg_msg_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="@dimen/dimen_12dp"
+                    android:paddingStart="@dimen/dimen_12dp"
+                    android:paddingEnd="@dimen/dimen_12dp"
+                    android:text="@string/login"
+                    android:textSize="@dimen/body_medium_font_size" />
+
+                <TextView
+                    android:textColor="@color/themeButtonColor"
+                    android:textSize="@dimen/pm_title_medium_font_size"
+                    android:id="@+id/signupText"
+                    android:padding="@dimen/dimen_2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pm_signupmessage" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/logout_button"
+                android:background="@drawable/pm_bg_msg_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/login_button_layout"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:layout_marginBottom="@dimen/dimen_30dp"
+                android:padding="@dimen/dimen_12dp"
+                android:paddingStart="@dimen/dimen_12dp"
+                android:paddingEnd="@dimen/dimen_12dp"
+                android:text="@string/logout"
+                android:textSize="@dimen/body_medium_font_size"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

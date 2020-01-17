@@ -1,0 +1,17 @@
+<!--
+  ~   Copyright (c) 2018 BigStep Technologies Private Limited.
+  ~
+  ~   The distribution of this source code is prohibited.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_messenger"
+        android:title="Messenger"
+        android:orderInCategory="100"
+        android:icon="@drawable/pm_ic_message"
+        android:visible="true"
+        app:showAsAction="always" />
+
+</menu>
